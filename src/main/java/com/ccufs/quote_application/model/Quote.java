@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "quotes")
+@Table(name = "quote")
 public class Quote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

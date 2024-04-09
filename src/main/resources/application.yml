@@ -2,11 +2,11 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/quote_db
     username: postgres
-    password: Snatch_My-Data-Please69))
+    password: rootroot
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     database: postgresql
     show-sql: true
     properties:

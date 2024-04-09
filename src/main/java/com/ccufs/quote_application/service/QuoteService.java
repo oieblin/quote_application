@@ -13,15 +13,19 @@ import java.util.List;
 public class QuoteService {
     private final QuoteRepository quoteRepository;
     public Quote saveQuote(Quote quote){
+
         return quoteRepository.save(quote);
     }
     public List<Quote> findAllQuotes(){
+
         return quoteRepository.findAll();
     }
     public Quote findQuoteById(Long id){
+
         return quoteRepository.findQuoteById(id);
     }
     public Quote updateQuote(Quote quote){
+
         return quoteRepository.save(quote);
     }
 

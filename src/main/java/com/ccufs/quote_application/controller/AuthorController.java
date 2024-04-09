@@ -3,7 +3,6 @@ package com.ccufs.quote_application.controller;
 import com.ccufs.quote_application.model.Author;
 import com.ccufs.quote_application.model.Quote;
 import com.ccufs.quote_application.service.AuthorService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
