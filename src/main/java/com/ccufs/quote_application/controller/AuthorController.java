@@ -2,7 +2,9 @@ package com.ccufs.quote_application.controller;
 
 import com.ccufs.quote_application.model.Author;
 import com.ccufs.quote_application.model.Quote;
+import com.ccufs.quote_application.repository.AuthorRepository;
 import com.ccufs.quote_application.service.AuthorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,8 +13,12 @@ import java.util.List;
 @RequestMapping("/api/v1/authors")
 public class AuthorController {
     private final AuthorService authorService;
-    public AuthorController(AuthorService authorService) {
+    private final AuthorRepository authorRepository;
+
+    @Autowired
+    public AuthorController(AuthorService authorService, AuthorRepository authorRepository) {
         this.authorService = authorService;
+        this.authorRepository = authorRepository;
     }
 
     @PostMapping
@@ -28,6 +34,12 @@ public class AuthorController {
     @GetMapping("{id}")
     public Author getAuthorById(@PathVariable Long id){
         return authorService.getAuthorById(id);
+    }
+
+
+    @GetMapping("/faculty/{faculty}")
+    public List<Author> findAuthorsByFaculty(@PathVariable String faculty) {
+        return authorRepository.findAuthorByFaculty(faculty);
     }
 
     @PutMapping

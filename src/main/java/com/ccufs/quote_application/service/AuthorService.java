@@ -14,15 +14,19 @@ public class AuthorService {
     private final AuthorRepository authorRepository;
     private final QuoteService quoteService;
     public Author saveAuthor(Author author){
+
         return authorRepository.save(author);
     }
     public List<Author> findAllAuthors(){
+
         return authorRepository.findAll();
     }
     public Author getAuthorById(Long id) {
+
         return authorRepository.findAuthorById(id);
     }
     public Author updateAuthor(Author author){
+
         return authorRepository.save(author);
     }
     public Quote addQuoteById(Long authorId, Long quoteId){
@@ -65,4 +69,8 @@ public class AuthorService {
         }
     }
 
-}
+    public List<Author> findAuthorsByFaculty(String faculty) {
+
+        return authorRepository.findAuthorByFaculty(faculty);
+        }
+    }
