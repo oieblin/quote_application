@@ -1,0 +1,119 @@
+2024-04-25 04:39:37.529  INFO 7636 --- [           main] com.ccufs.quotes.QuoteApplication        : Starting QuoteApplication using Java 21.0.2 with PID 7636 (C:\Users\vkubo\Downloads\quote_application\target\classes started by vkubo in C:\Users\vkubo\Downloads\quote_application)
+2024-04-25 04:39:37.564  INFO 7636 --- [           main] com.ccufs.quotes.QuoteApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-04-25 04:39:39.101  INFO 7636 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-25 04:39:39.308  INFO 7636 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 195 ms. Found 2 JPA repository interfaces.
+2024-04-25 04:39:40.146  INFO 7636 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-25 04:39:40.160  INFO 7636 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-25 04:39:40.161  INFO 7636 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-25 04:39:40.239  INFO 7636 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-25 04:39:40.239  INFO 7636 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2455 ms
+2024-04-25 04:39:40.483  INFO 7636 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-25 04:39:40.576  INFO 7636 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-25 04:39:40.621  INFO 7636 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-25 04:39:40.918  INFO 7636 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-25 04:39:40.955  INFO 7636 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-25 04:39:41.253  INFO 7636 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4e96cb04
+2024-04-25 04:39:41.255  INFO 7636 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-25 04:39:41.297  WARN 7636 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-25 04:39:42.464  INFO 7636 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-25 04:39:42.583  INFO 7636 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 04:39:43.290  INFO 7636 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-25 04:39:44.330  WARN 7636 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-25 04:39:46.892  INFO 7636 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-25 04:39:46.910  INFO 7636 --- [           main] com.ccufs.quotes.QuoteApplication        : Started QuoteApplication in 10.827 seconds (process running for 13.345)
+2024-04-25 04:42:25.862  INFO 7636 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-25 04:42:25.862  INFO 7636 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-25 04:42:25.863  INFO 7636 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-25 04:42:25.944  INFO 7636 --- [nio-8080-exec-1] c.ccufs.quotes.logging.LoggingAspects    : Entering controller method: AuthorController.bulkSaveAuthors
+2024-04-25 04:42:25.944  INFO 7636 --- [nio-8080-exec-1] c.ccufs.quotes.logging.LoggingAspects    : Entering service method: AuthorService.bulkSaveAuthors
+2024-04-25 04:42:25.983  INFO 7636 --- [nio-8080-exec-1] c.ccufs.quotes.logging.LoggingAspects    : Exiting service method: AuthorService.bulkSaveAuthors
+2024-04-25 04:42:25.983  INFO 7636 --- [nio-8080-exec-1] c.ccufs.quotes.logging.LoggingAspects    : Exiting controller method: AuthorController.bulkSaveAuthors
+2024-04-25 04:45:45.714  INFO 7636 --- [nio-8080-exec-6] c.ccufs.quotes.logging.LoggingAspects    : Entering controller method: QuoteController.getAllQuotes
+2024-04-25 04:45:45.715  INFO 7636 --- [nio-8080-exec-6] c.ccufs.quotes.logging.LoggingAspects    : Entering service method: QuoteService.findAllQuotes
+2024-04-25 04:45:45.808  INFO 7636 --- [nio-8080-exec-6] c.ccufs.quotes.logging.LoggingAspects    : Exiting service method: QuoteService.findAllQuotes
+2024-04-25 04:45:45.808  INFO 7636 --- [nio-8080-exec-6] c.ccufs.quotes.logging.LoggingAspects    : Exiting controller method: QuoteController.getAllQuotes
+2024-04-25 04:49:06.036  INFO 7636 --- [nio-8080-exec-9] c.ccufs.quotes.logging.LoggingAspects    : Entering controller method: QuoteController.bulkSaveQuotes
+2024-04-25 04:49:06.036  INFO 7636 --- [nio-8080-exec-9] c.ccufs.quotes.logging.LoggingAspects    : Entering service method: QuoteService.bulkSaveQuotes
+2024-04-25 04:49:06.051  INFO 7636 --- [nio-8080-exec-9] c.ccufs.quotes.logging.LoggingAspects    : Exiting service method: QuoteService.bulkSaveQuotes
+2024-04-25 04:49:06.052  INFO 7636 --- [nio-8080-exec-9] c.ccufs.quotes.logging.LoggingAspects    : Exiting controller method: QuoteController.bulkSaveQuotes
+2024-04-25 05:01:45.990  INFO 7636 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 05:01:45.991  INFO 7636 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-25 05:01:45.994  INFO 7636 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-25 10:42:40.915  INFO 17396 --- [           main] com.ccufs.quotes.QuoteApplication        : Starting QuoteApplication using Java 21.0.2 with PID 17396 (C:\Users\vkubo\Downloads\quote_application\target\classes started by vkubo in C:\Users\vkubo\Downloads\quote_application)
+2024-04-25 10:42:40.918  INFO 17396 --- [           main] com.ccufs.quotes.QuoteApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-04-25 10:42:43.598  INFO 17396 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-25 10:42:43.904  INFO 17396 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 291 ms. Found 2 JPA repository interfaces.
+2024-04-25 10:42:45.159  INFO 17396 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-25 10:42:45.175  INFO 17396 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-25 10:42:45.175  INFO 17396 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-25 10:42:45.292  INFO 17396 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-25 10:42:45.292  INFO 17396 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4306 ms
+2024-04-25 10:42:45.607  INFO 17396 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-25 10:42:45.700  INFO 17396 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-25 10:42:45.748  INFO 17396 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-25 10:42:46.217  INFO 17396 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-25 10:42:46.268  INFO 17396 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-25 10:42:46.582  INFO 17396 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@492c9892
+2024-04-25 10:42:46.585  INFO 17396 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-25 10:42:46.652  WARN 17396 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-25 10:42:48.336  INFO 17396 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-25 10:42:48.463  INFO 17396 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 10:42:49.052  INFO 17396 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-25 10:42:49.959  WARN 17396 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-25 10:42:51.288  INFO 17396 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-25 10:42:51.297  INFO 17396 --- [           main] com.ccufs.quotes.QuoteApplication        : Started QuoteApplication in 10.938 seconds (process running for 11.675)
+2024-04-25 10:43:08.400  INFO 17396 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 10:43:08.402  INFO 17396 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-25 10:43:08.414  INFO 17396 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-25 10:43:12.281  INFO 8440 --- [           main] com.ccufs.quotes.QuoteApplication        : Starting QuoteApplication using Java 21.0.2 with PID 8440 (C:\Users\vkubo\Downloads\quote_application\target\classes started by vkubo in C:\Users\vkubo\Downloads\quote_application)
+2024-04-25 10:43:12.284  INFO 8440 --- [           main] com.ccufs.quotes.QuoteApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-04-25 10:43:13.712  INFO 8440 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-25 10:43:13.968  INFO 8440 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 240 ms. Found 2 JPA repository interfaces.
+2024-04-25 10:43:15.257  INFO 8440 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-25 10:43:15.308  INFO 8440 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-25 10:43:15.309  INFO 8440 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-25 10:43:15.424  INFO 8440 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-25 10:43:15.424  INFO 8440 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3058 ms
+2024-04-25 10:43:15.731  INFO 8440 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-25 10:43:15.863  INFO 8440 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-25 10:43:15.936  INFO 8440 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-25 10:43:16.334  INFO 8440 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-25 10:43:16.394  INFO 8440 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-25 10:43:16.750  INFO 8440 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@665212ec
+2024-04-25 10:43:16.752  INFO 8440 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-25 10:43:16.806  WARN 8440 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-25 10:43:18.786  INFO 8440 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-25 10:43:18.920  INFO 8440 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 10:43:19.531  INFO 8440 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-25 10:43:21.006  WARN 8440 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-25 10:43:23.009  INFO 8440 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-25 10:43:23.021  INFO 8440 --- [           main] com.ccufs.quotes.QuoteApplication        : Started QuoteApplication in 11.844 seconds (process running for 12.867)
+2024-04-25 10:43:47.783  INFO 8440 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 10:43:47.786  INFO 8440 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-25 10:43:47.808  INFO 8440 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-25 10:43:55.073  INFO 7400 --- [           main] com.ccufs.quotes.QuoteApplication        : Starting QuoteApplication using Java 21.0.2 with PID 7400 (C:\Users\vkubo\Downloads\quote_application\target\classes started by vkubo in C:\Users\vkubo\Downloads\quote_application)
+2024-04-25 10:43:55.075  INFO 7400 --- [           main] com.ccufs.quotes.QuoteApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-04-25 10:43:55.981  INFO 7400 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-25 10:43:56.211  INFO 7400 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 218 ms. Found 2 JPA repository interfaces.
+2024-04-25 10:43:57.087  INFO 7400 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-25 10:43:57.097  INFO 7400 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-25 10:43:57.098  INFO 7400 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-25 10:43:57.159  INFO 7400 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-25 10:43:57.159  INFO 7400 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2045 ms
+2024-04-25 10:43:57.400  INFO 7400 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-25 10:43:57.448  INFO 7400 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-25 10:43:57.477  INFO 7400 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-25 10:43:57.708  INFO 7400 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-25 10:43:57.737  INFO 7400 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-25 10:43:57.916  INFO 7400 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@261a66b8
+2024-04-25 10:43:57.918  INFO 7400 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-25 10:43:57.962  WARN 7400 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-25 10:43:59.088  INFO 7400 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-25 10:43:59.189  INFO 7400 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 10:43:59.637  INFO 7400 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-25 10:44:00.400  WARN 7400 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-25 10:44:01.640  INFO 7400 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-25 10:44:01.648  INFO 7400 --- [           main] com.ccufs.quotes.QuoteApplication        : Started QuoteApplication in 7.223 seconds (process running for 7.875)
+2024-04-25 11:00:47.254  INFO 7400 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-25 11:00:47.257  INFO 7400 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-25 11:00:47.263  INFO 7400 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

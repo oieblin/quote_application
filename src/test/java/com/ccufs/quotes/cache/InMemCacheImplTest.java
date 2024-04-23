@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The type In mem cache impl test.
@@ -78,5 +77,23 @@ class InMemCacheImplTest {
 
     assertNull(inMemCache.get(key1));
     assertNull(inMemCache.get(key2));
+  }
+
+  @Test
+  void testContainsKey() {
+    String key = "key";
+    Object value = "value";
+
+    inMemCache.put(key, value);
+    assertTrue(inMemCache.containsKey(key));
+  }
+
+  @Test
+  void testContainsValue() {
+    String key = "key";
+    Object value = "value";
+
+    inMemCache.put(key, value);
+    assertTrue(inMemCache.containsValue(value));
   }
 }
