@@ -1,5 +1,7 @@
 package com.ccufs.quotes.exceptions;
 
+import com.ccufs.quotes.model.Author;
+import com.ccufs.quotes.service.AuthorService;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.TypeMismatchException;
 import org.springframework.beans.ConversionNotSupportedException;
@@ -22,6 +24,17 @@ import org.springframework.web.multipart.support.MissingServletRequestPartExcept
 @RestControllerAdvice
 @Validated
 public class ResponseErrProcessing {
+  /**
+   * Handle illegal argument exception response err.
+   *
+   * @return the response err
+   */
+  AuthorService authorService;
+  /**
+   * The Author.
+   */
+  Author author;
+
   /**
    * Handle illegal argument exception response err.
    *
@@ -61,10 +74,14 @@ public class ResponseErrProcessing {
   @ExceptionHandler({ConversionNotSupportedException.class,
     HttpMessageNotWritableException.class})
   public ResponseErr handleInternalServerError() {
-    log.error("ERROR 500");
-    return new ResponseErr(500,
-            "INTERNAL_SERVER_ERROR: "
-                    + "the server encountered an unexpected condition that prevented "
-                    + "it from fulfilling the request.");
+
+    if (authorService.updateAuthor(author) == null) {
+      log.error("ERROR 500");
+      return new ResponseErr(500,
+              "INTERNAL_SERVER_ERROR: "
+                      + "the server encountered an unexpected condition that prevented "
+                      + "it from fulfilling the request.");
+    }
+    return null;
   }
 }

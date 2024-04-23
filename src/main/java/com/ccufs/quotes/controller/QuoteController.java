@@ -53,6 +53,7 @@ public class QuoteController {
    */
   @PostMapping
   public Quote postQuote(@RequestBody Quote quote) {
+
     return quoteService.saveQuote(quote);
   }
 
@@ -96,5 +97,10 @@ public class QuoteController {
   @DeleteMapping("{id}")
   public void deleteQuote(@PathVariable Long id) {
     quoteService.deleteQuoteById(id);
+  }
+
+  @PostMapping("/bulk")
+  public List<Quote> bulkSaveQuotes(@RequestBody List<Quote> quotes) {
+    return quoteService.bulkSaveQuotes(quotes);
   }
 }

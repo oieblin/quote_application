@@ -4,6 +4,7 @@ import com.ccufs.quotes.model.Author;
 import com.ccufs.quotes.model.Quote;
 import com.ccufs.quotes.repository.AuthorRepository;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -100,6 +101,8 @@ public class AuthorService {
         authorRepository.save(author);
       }
     }
+
+
   }
 
   /**
@@ -129,4 +132,17 @@ public class AuthorService {
 
     return authorRepository.findAuthorByFaculty(faculty);
   }
+
+  /**
+   * Bulk save authors list.
+   *
+   * @param authors the authors
+   * @return the list
+   */
+  public List<Author> bulkSaveAuthors(List<Author> authors) {
+    return authors.stream()
+            .map(authorRepository::save)
+            .collect(Collectors.toList());
+  }
 }
+

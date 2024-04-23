@@ -126,4 +126,8 @@ public class AuthorController {
     authorService.deleteAuthorById(id);
   }
 
+  @PostMapping("/bulk")
+  public List<Author> bulkSaveAuthors(@RequestBody List<Author> authors) {
+    return authorService.bulkSaveAuthors(authors);
+  }
 }
