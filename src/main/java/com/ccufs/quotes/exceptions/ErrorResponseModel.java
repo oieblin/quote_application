@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class ResponseErr {
+public class ErrorResponseModel {
   private Integer errorCode;
   private String errorMessage;
 }

@@ -1,87 +1,67 @@
 package com.ccufs.quotes.exceptions;
 
-import com.ccufs.quotes.model.Author;
-import com.ccufs.quotes.service.AuthorService;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.TypeMismatchException;
-import org.springframework.beans.ConversionNotSupportedException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.converter.HttpMessageNotReadableException;
-import org.springframework.http.converter.HttpMessageNotWritableException;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
-import org.springframework.web.multipart.support.MissingServletRequestPartException;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
 
 /**
  * The type Response err processing.
  */
+@ControllerAdvice
 @Slf4j
-@RestControllerAdvice
-@Validated
-public class ResponseErrProcessing {
-  /**
-   * Handle illegal argument exception response err.
-   *
-   * @return the response err
-   */
-  AuthorService authorService;
-  /**
-   * The Author.
-   */
-  Author author;
+public class ResponseErrProcessing extends ResponseEntityExceptionHandler {
 
-  /**
-   * Handle illegal argument exception response err.
-   *
-   * @return the response err
-   */
-  @ResponseStatus(HttpStatus.BAD_REQUEST)
-  @ExceptionHandler({MethodArgumentNotValidException.class,
-    MissingServletRequestParameterException.class,
-    MethodArgumentTypeMismatchException.class,
-    MissingServletRequestPartException.class,
-    TypeMismatchException.class, HttpMessageNotReadableException.class})
-  public ResponseErr handleIllegalArgumentException() {
-    log.error("ERROR 400");
-    return new ResponseErr(400, "BAD_REQUEST: "
-            + "The client should not repeat this request without modification.");
-  }
+  @Nullable
+  @Override
+  protected ResponseEntity<Object> handleExceptionInternal(
+          Exception ex,
+          @Nullable Object body,
+          HttpHeaders headers,
+          HttpStatusCode statusCode,
+          WebRequest request) {
+    if (statusCode.equals(HttpStatus.NOT_FOUND)) {
+      ErrorResponseModel errorResponse =
+              new ErrorResponseModel(statusCode.value(),
+                      "Resource Not Found Error: " + ex.getMessage());
+      return new ResponseEntity<>(errorResponse, headers, statusCode);
+    } else if (statusCode.equals(HttpStatus.BAD_REQUEST)) {
+      ErrorResponseModel errorResponse =
+              new ErrorResponseModel(
+                       statusCode.value(),
+                      "Bad Request Error: "
+                              + ex.getMessage());
+      return new ResponseEntity<>(errorResponse, headers, statusCode);
+    } else if (statusCode.equals(HttpStatus.INTERNAL_SERVER_ERROR)) {
+      ErrorResponseModel errorResponse =
+              new ErrorResponseModel(
 
-  /**
-   * Handle found exception response err.
-   *
-   * @return the response err
-   */
-  @ResponseStatus(HttpStatus.NOT_FOUND)
-  @ExceptionHandler(Exception.class)
-  public ResponseErr handleFoundException() {
-    log.error("ERROR 404");
-    return new ResponseErr(404, "NOT_FOUND: "
-            + "the server did not find the resource at this address.");
-  }
-
-  /**
-   * Handle internal server error response err.
-   *
-   * @return the response err
-   */
-  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-  @ExceptionHandler({ConversionNotSupportedException.class,
-    HttpMessageNotWritableException.class})
-  public ResponseErr handleInternalServerError() {
-
-    if (authorService.updateAuthor(author) == null) {
-      log.error("ERROR 500");
-      return new ResponseErr(500,
-              "INTERNAL_SERVER_ERROR: "
-                      + "the server encountered an unexpected condition that prevented "
-                      + "it from fulfilling the request.");
+                      statusCode.value(), "Internal Server Error: "
+                      + ex.getMessage());
+      return new ResponseEntity<>(errorResponse, headers, statusCode);
     }
-    return null;
+    return new ResponseEntity<>(body, headers, statusCode);
+  }
+
+  /**
+   * Handle internal server error exception response entity.
+   *
+   * @param ex the ex
+   * @return the response entity
+   */
+  @ExceptionHandler(Exception.class)
+  public ResponseEntity<ErrorResponseModel> handleInternalServerErrorException(Exception ex) {
+    ErrorResponseModel errorResponse =
+            new ErrorResponseModel(HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                    "Internal Server Error: " + ex.getMessage()
+                    );
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
   }
 }
