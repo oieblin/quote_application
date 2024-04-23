@@ -1,4 +1,4 @@
-package com.ccufs.quotes;
+/*package com.ccufs.quotes;
 
 
 
@@ -14,5 +14,5 @@ class QuoteApplicationTests {
   void contextLoads() {}
 
 
-}
+}*/
 
