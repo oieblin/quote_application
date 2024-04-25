@@ -18,7 +18,7 @@ public class AuthorService {
   private Long id;
 
   /**
-   * Save author author.
+   * Save author.
    *
    * @param author the author
    * @return the author
@@ -50,7 +50,7 @@ public class AuthorService {
   }
 
   /**
-   * Update author author.
+   * Update author.
    *
    * @param author the author
    * @return the author
