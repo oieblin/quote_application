@@ -32,4 +32,6 @@ public class Quote {
   @JoinColumn(name = "author_id")
 
   private Author author;
+
+
 }

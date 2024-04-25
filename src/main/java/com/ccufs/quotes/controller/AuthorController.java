@@ -79,6 +79,7 @@ public class AuthorController {
    */
   @GetMapping("/faculty/{faculty}")
   public List<Author> findAuthorsByFaculty(@PathVariable String faculty) {
+    int x = 1/0;
     return authorRepository.findAuthorByFaculty(faculty);
   }
 
