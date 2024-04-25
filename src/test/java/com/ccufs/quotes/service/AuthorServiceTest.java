@@ -1,7 +1,6 @@
 package com.ccufs.quotes.service;
 
 import com.ccufs.quotes.model.Author;
-import com.ccufs.quotes.model.Quote;
 import com.ccufs.quotes.repository.AuthorRepository;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +13,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
