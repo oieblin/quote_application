@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 public class AuthorService {
   private final AuthorRepository authorRepository;
   private final QuoteService quoteService;
+  private Long id;
 
   /**
    * Save author author.
@@ -110,6 +111,7 @@ public class AuthorService {
    * @param id the id
    */
   public void deleteAuthorById(Long id) {
+    this.id = id;
     Author author = authorRepository.findAuthorById(id);
     if (author != null) {
       List<Quote> quotes = author.getQuotes().stream().toList();

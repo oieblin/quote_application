@@ -2,8 +2,9 @@ package com.ccufs.quotes.service;
 
 import com.ccufs.quotes.model.Quote;
 import com.ccufs.quotes.repository.QuoteRepository;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -78,11 +79,8 @@ public class QuoteService {
    * @return the list
    */
   public List<Quote> bulkSaveQuotes(List<Quote> quotes) {
-    List<Quote> list = new ArrayList<>();
-    for (Quote quote : quotes) {
-      Quote save = quoteRepository.save(quote);
-      list.add(save);
-    }
-    return list;
+    return quotes.stream()
+            .map(quoteRepository::save)
+            .collect(Collectors.toList());
   }
 }
