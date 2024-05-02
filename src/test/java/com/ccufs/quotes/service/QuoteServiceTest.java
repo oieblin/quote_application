@@ -84,5 +84,20 @@ class QuoteServiceTest {
     assertEquals(quote, savedQuote);
     verify(quoteRepository).save(any(Quote.class));
   }
+
+  //@Test
+  //void findAllQuotes() {}
+
+  @Test
+  void updateQuote() {
+    Long quoteId = 1L;
+    Quote quote = new Quote();
+    quote.setId(quoteId);
+    quote.setText("Test quote");
+    when(quoteRepository.save(any(Quote.class))).thenAnswer(invocation -> invocation.getArgument(0));
+    Quote savedQuote = quoteService.updateQuote(quote);
+    assertEquals(quote, savedQuote);
+    verify(quoteRepository).save(any(Quote.class));
+  }
 }
 

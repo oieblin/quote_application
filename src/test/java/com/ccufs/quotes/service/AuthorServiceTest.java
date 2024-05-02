@@ -2,6 +2,7 @@ package com.ccufs.quotes.service;
 
 import com.ccufs.quotes.model.Author;
 import com.ccufs.quotes.repository.AuthorRepository;
+import com.ccufs.quotes.repository.QuoteRepository;
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.jupiter.api.Test;
@@ -11,24 +12,24 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class AuthorServiceTest {
 
-@Mock
-private AuthorRepository authorRepository;
+  @Mock
+  private AuthorRepository authorRepository;
+  private QuoteRepository quoteRepository;
 
-@Getter
-@Setter
-@Mock
-private QuoteService quoteService;
+  @Getter
+  @Setter
+  @Mock
+  private QuoteService quoteService;
 
-@InjectMocks
-private AuthorService authorService;
+  @InjectMocks
+  private AuthorService authorService;
 
 
   @Test

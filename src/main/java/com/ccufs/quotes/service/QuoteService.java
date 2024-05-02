@@ -4,7 +4,6 @@ import com.ccufs.quotes.model.Quote;
 import com.ccufs.quotes.repository.QuoteRepository;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
